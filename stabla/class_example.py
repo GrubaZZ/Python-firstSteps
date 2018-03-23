@@ -171,7 +171,9 @@ def transplant(T, u, v):
 # def random_list (min, max, elements):
 #    list = random.sample(range(min, max), elements)
 #    return list
-
+def random_list (min, max, elements):
+    list = random.sample(range(min, max), elements)
+    return list
 if __name__ == "__main__":
     d1 = Data(1, 2)
     d2 = Data(2, 3)
@@ -189,16 +191,26 @@ if __name__ == "__main__":
     add_1(n2, n1)
     add_1(n2, n3)
 
-    print("Printing inordered tree: ")
+    l1 = []
+    l2 = random_list(1, 100, 10)
+    ln = []
+
+    for i in range(0, len(l2)):
+        ln.append(Node(None, None, None, Data(l2[i], 0)))
+
+    for i in range(1, len(ln)):
+        tree_insert(ln[0], ln[i])
+
+    #print("Printing inordered tree: ")
     inordered_tree_walk(n2)
-    print("Searching for 3 and found: ", tree_search(n2, 3).data.a1)
-    print("Iterative searching for 3 and found: ", iterative_tree_search(n2, 3).data.a1)
-    print("Searching for minimum and found: ", tree_minimum(n2).data.a1)
-    print("Searching for maximum and found: ", tree_maximum(n2).data.a1)
-    # print("Searching for maximum and found: ", succesor(n2).data.a1)
-    print("Inserting 4! ")
-    tree_insert(n3, n4)
-    print("Printing inordered tree with added 4: ")
-    inordered_tree_walk(n2)
+    #print("Searching for 3 and found: ", tree_search(n2, 3).data.a1)
+    #print("Iterative searching for 3 and found: ", iterative_tree_search(n2, 3).data.a1)
+    #print("Searching for minimum and found: ", tree_minimum(n2).data.a1)
+    #print("Searching for maximum and found: ", tree_maximum(n2).data.a1)
+    #print("Searching for maximum and found: ", succesor(n2).data.a1)
+    #print("Inserting 4! ")
+    #tree_insert(n3, n4)
+    #print("Printing inordered tree with added 4: ")
+    #inordered_tree_walk(n2)
 
     # print("Data of root: ", n2.data.a1, "Data of left child: ", n2.left.data.a1, "Data of right child: ", n2.right.data.a1)
