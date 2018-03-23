@@ -80,13 +80,14 @@ def foo(l):
 
 start_time = time.clock()
 
-#Blok Funkcije
+#Blok Funkcije+---++++++++++++++----
 
 def inOrderTreeWalk (varX):
     if varX is not None:
         inOrderTreeWalk(varX.left)
         print(varX.key)
         inOrderTreeWalk(varX.right)
+
 
 def TreeSearch(varX,varK):
     if varX is None or varK == varX.key:
@@ -144,7 +145,7 @@ def Tree_Delete(T,z):
     elif z.right==None:
         Transplant(T,z,z.left)
     else:
-        y=Tree_Minimum(z.right)
+        y=TreeMin(z.right)
         if y.p!=z:
             Transplant(T,y,y.right)
             y.right=z.right
